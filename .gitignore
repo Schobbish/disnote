@@ -1,3 +1,6 @@
+# ignore bot token
+bot-token.json
+
 # Logs
 logs
 *.log

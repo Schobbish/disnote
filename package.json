@@ -1,0 +1,22 @@
+{
+  "name": "hackathon2021s",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schobbish/hackathon2021s.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Schobbish/hackathon2021s/issues"
+  },
+  "homepage": "https://github.com/Schobbish/hackathon2021s#readme",
+  "dependencies": {
+    "discord": "^0.8.2"
+  }
+}
