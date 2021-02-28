@@ -4,6 +4,7 @@ certs/
 my-safe-directory/
 cockroach-data/
 node1/
+data/
 
 # Logs
 logs
