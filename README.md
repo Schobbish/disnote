@@ -1,7 +1,5 @@
 # DisNote
-discord bot hackutd2021
- 
-Won Best Use of CockroachDB
+Discord bot made for HackUTD VII - Won Best Use of CockroachDB
 
 You'll need to run `cp -r data_template data` (and `npm i` of course) before running.
 
