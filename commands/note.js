@@ -27,7 +27,7 @@ module.exports = {
                         name: "`!dn note show date <YYYY-DD-MM>`",
                         value: "retrieve a list of all notes from the given date"
                     }, {
-                        name: "`!dn note delete <note name>`",
+                        name: "`!dn note delete name <note name>`",
                         value: "delete the specified note. This action cannot be undone"
                     }, {
                         name: "`!dn note delete all`",
@@ -549,8 +549,7 @@ function ConvertNoteToString(message){
 
 
     download(message.attachments.first().url);
-    console.log("Hello world");
-    console.log(fs.readFileSync("../text.txt").toString('utf-8'));
+    fs.readFileSync("../text.txt").toString('utf-8');
     return fs.readFileSync("../text.txt");
 
 
@@ -615,14 +614,14 @@ function GetCockroachPool(){
 
     // Connect to the "NotesDB" database.
     var config = {
-        user: 'DisNote',
+        user: 'disnote',
         host: 'localhost',
         database: 'notesdb',
         port: 26257,
         ssl: {
             ca: fs.readFileSync('certs/ca.crt').toString(),
-            key: fs.readFileSync('certs/client.DisNote.key').toString(),
-            cert: fs.readFileSync('certs/client.DisNote.crt').toString()
+            key: fs.readFileSync('certs/client.disnote.key').toString(),
+            cert: fs.readFileSync('certs/client.disnote.crt').toString()
         }
     };
 
