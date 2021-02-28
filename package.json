@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/Schobbish/hackathon2021s#readme",
   "dependencies": {
-    "discord": "^0.8.2"
+    "async": "^3.2.0",
+    "discord": "^0.8.2",
+    "discord.js": "^12.5.1",
+    "md5": "^2.3.0",
+    "pg": "^8.5.1",
+    "request": "^2.88.2"
   }
 }
