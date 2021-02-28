@@ -9,7 +9,15 @@ module.exports = {
         //  Use index 2 because index 0 will be '!dn' and index 1 will be 'remind'
         //  Check the third string in words to see which subroutine to run.
         if(words[2] === undefined){
-            message.channel.send('Additional arguments expected. Try using `!dn remind help` for more information.');
+            //message.channel.send('Additional arguments expected. Try using `!dn remind help` for more information.');
+            const helpEmbed = new Discord.MessageEmbed()
+                .setColor('#090752')
+                .setTitle("!dn remind help")
+                .addFields(
+                    { name: '`!dn remind help`', value: 'display all commands in the `remind` family' },
+                    { name: '`!dn remind <message>`', value: 'set a reminder for a specific date and time' }
+                )
+            message.channel.send(helpEmbed);
         }
         else{
             switch (words[2].toUpperCase()){    //  Set string to upper case to remove case-sensitivity
@@ -21,7 +29,7 @@ module.exports = {
                         && words[6]) {
                             const data = require('../data/reminders.json');
 
-                            for (let i = 0; i < data.reminders.length; i++) {
+                            for (let i = data.reminders.length - 1; i >= 0; i++) {
                                 if(data.reminders[i].user === message.author.id && !data.reminders['date set']) {
                                     if(data.reminders[i].type === 'alarm') {
                                         if(words[7]) {
@@ -30,12 +38,15 @@ module.exports = {
                                             data.reminders[i]['date set'] = true;
                                             if(words[7].toUpperCase() === 'NEVER') {
                                                 data.reminders[i].repeat = 0;
+                                                message.channel.send("Reminder created!");
                                             }
                                             else if(words[7].toUpperCase() === 'WEEKLY') {
                                                 data.reminders[i].repeat = 604800000;
+                                                message.channel.send("Reminder created!");
                                             }
                                             else if(words[7].toUpperCase() === 'DAILY') {
                                                 data.reminders[i].repeat = 86400000;
+                                                message.channel.send("Reminder created!");
                                             } else {
                                                 data.reminders[i]['date set'] = false;
                                             }
@@ -65,7 +76,7 @@ module.exports = {
                     message.channel.send(helpEmbed);
                     break;
 
-                case 'ALARM': //!dn remind alarm [name]
+                default:
                     if(words[3]) {
                         let name = words.slice(3).join(" ");
 
@@ -89,11 +100,6 @@ module.exports = {
                     } else {
                         message.channel.send('Unexpected arguments. Remember that the format of alarm is !dn remind alarm [name]');
                     }
-
-                    break;
-
-                default:
-                    message.channel.send('Unexpected arguments. Try using `!dn remind help` for more information.');
                     break;
             }
         }

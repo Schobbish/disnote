@@ -13,25 +13,25 @@ module.exports = {
                 fields: [
                     {
                         name: "`!dn note help`",
-                        value: "Display all commands in the \`note\` family."
+                        value: "display all commands in the \`note\` family"
                     }, {
                         name: "`!dn note upload`",
-                        value: "Add the **attached** document to the notes cloud."
+                        value: "add the **attached** document to the notes cloud"
                     }, {
                         name: "`!dn note get <note name>`",
-                        value: "Retrieve the notes file named [note Name] for download."
+                        value: "retrieve the notes file named [note Name] for download"
                     }, {
                         name: "`!dn note show all`",
-                        value: "Retrieve a list of all notes from the server."
+                        value: "retrieve a list of all notes from the server"
                     }, {
                         name: "`!dn note show date <YYYY-DD-MM>`",
-                        value: "Retrieve a list of all notes from the given date."
+                        value: "retrieve a list of all notes from the given date"
                     }, {
                         name: "`!dn note delete <note name>`",
-                        value: "Delete the specified note. This action cannot be undone."
+                        value: "delete the specified note. This action cannot be undone"
                     }, {
                         name: "`!dn note delete all`",
-                        value: "Delete **ALL** notes on this server. This action cannot be undone."
+                        value: "delete **ALL** notes on this server. This action cannot be undone"
                     }
                 ]
             }

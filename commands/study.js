@@ -13,11 +13,23 @@ module.exports = {
         //  Check the third string in words to see which subroutine to run.
         if(words[2] === undefined){
             //message.channel.send('Additional arguments expected. Try using `!dn study help` for more information.');
-            const additionalArgumentsEmbed = new Discord.MessageEmbed()
+            /*const additionalArgumentsEmbed = new Discord.MessageEmbed()
                     .setColor('#ff3300')
                     .setTitle("Additional arguments expected")
                     .setDescription('Try using `!dn study help` for more information.');
-            message.channel.send(additionalArgumentsEmbed);
+            message.channel.send(additionalArgumentsEmbed);*/
+            const helpEmbed = new Discord.MessageEmbed()
+                .setColor('#ff3300')
+                .setTitle("!dn study help")
+                //.setDescription("`study help                     ` - display all commands in the `study` family.\n `study clockin                  ` - start a tracked study session.\n`study clockout                 ` - end a tracked study session.\n`study leaderboard              ` - display a leaderboard of those with the most study time.\n`study total                    ` - display your total study time")
+                .addFields(
+                    { name: '`!dn study help`', value: 'display all commands in the `study` family' },
+                    { name: '`!dn study clockin`', value: 'start a tracked study session' },
+                    { name: '`!dn study clockout`', value: 'end a tracked study session' },
+                    { name: '`!dn study leaderboard`', value: 'display a leaderboard of those with the most study time' },
+                    { name: '`!dn study total`', value: 'display your total study time' }
+                )
+            message.channel.send(helpEmbed);
         }
         else{
             switch (words[2].toUpperCase()){    //  Set string to upper case to remove case-sensitivity
@@ -160,7 +172,7 @@ function clockout(message){
             .setColor('#ff3300')
             .setTitle("You are not clocked in!")
             .setDescription('Use `!dn study clockin` to clock in');
-        message.channel.send(alreadyClockedinEmbed);
+        message.channel.send(alreadyClockedoutEmbed);
     }
     fs.writeFileSync("./data/study.json", JSON.stringify(data, null, 4));
 }

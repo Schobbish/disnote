@@ -11,7 +11,7 @@ module.exports = {
         const dingEmbed = new Discord.MessageEmbed()
             .setColor('#ff3300')
             .setTitle("**DONG**")
-            .setThumbnail("https://tenor.com/view/typing-fast-cyber-banana-help-gif-16125910")
+            // .setThumbnail("https://media.discordapp.net/attachments/814306526687658065/815615528680554508/tenor.gif")
         message.channel.send(dingEmbed);
     }
 };

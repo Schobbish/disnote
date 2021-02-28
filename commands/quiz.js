@@ -9,7 +9,7 @@ module.exports = {
 
     execute(message, words) {
         let helpEmbed = new Discord.MessageEmbed();
-        helpEmbed.setTitle("`!dn quiz help`");
+        helpEmbed.setTitle("!dn quiz help");
         helpEmbed.addField("`!dn quiz help`", "display all commands in the `quiz` family");
         helpEmbed.addField("`!dn quiz new quiz`", "starts the process of making a new quiz in your guild");
         helpEmbed.addField("`!dn quiz list [quiz title]`", "lists available quizzes or the questions in a quiz")
