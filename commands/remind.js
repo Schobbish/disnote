@@ -71,7 +71,7 @@ module.exports = {
                         .setTitle("!dn remind help")
                         .addFields(
                             { name: '`!dn remind help`', value: 'display all commands in the `remind` family.' },
-                            { name: '`!dn remind <message>`', value: 'set a reminder for a specific date and time.' }
+                            { name: '`!dn remind alarm <message>`', value: 'set a reminder for a specific date and time.' }
                         )
                     message.channel.send(helpEmbed);
                     break;
