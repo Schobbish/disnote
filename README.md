@@ -1,4 +1,4 @@
-# hackathon2021s
+# DisNote
 discord bot hackutd2021
  
 Won Best Use of CockroachDB
